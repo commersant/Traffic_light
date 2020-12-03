@@ -1,43 +1,70 @@
 <!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>Светофор</title>
-    <style>
-      .container {
-        border:5px solid gray;
-        background:black;
-        width:200px;
-        margin:auto;
-        padding-bottom:1em;
-      }
-      #stop, #wait, #go {
-        width:100px;
-        height:100px;
-        border-radius:50%;
-        margin:auto;
-        margin-top:1em;
-        background:gray;
-        border:2px solid #483D8B;
-        cursor:pointer;
-        box-shadow: inset 0 0 10px black; 
-      }
-      #stop:hover {
-        background:red;
-      }
-      #wait:hover {
-        background:yellow;
-      }
-      #go:hover {
-        background:green;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div id="stop"></div>
-      <div id="wait"></div>
-      <div id="go"></div>
-    </div>
-  </body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Светофор</title>
+		<style>
+			 .container{
+				background:black;
+				width: 300px;
+				margin: auto;
+				margin-top: 100px;
+				border: 5px solid gray;
+				padding-bottom: 15px;
+			}
+			.stop, .wait, .go{
+				margin: auto;
+				margin-top: 15px;
+				width:150px;
+				height:150px;
+				border-radius: 50%;
+				border: 3px solid Silver;
+				box-shadow: inset 0 0 20px black;
+				background: gray;
+				cursor: pointer;
+			}
+			
+			.stop{
+				animation: stop 20s infinite;
+			}
+			.wait{
+				animation: wait 20s infinite
+			}
+			.go{
+				animation: go 20s infinite;
+			}
+			@keyframes stop{
+				0%{background:red;} 
+				19%{background:red;} 
+				20%{background: gray;}
+				59%{background: gray;}
+				60%{background:red;}
+				100%{background:red;}
+			}
+			@keyframes wait{
+				19%{background: gray;}
+				20%{background: yellow;}
+				29%{background: yellow;}
+				30%{background: gray;}
+				49%{background: gray;}
+				50%{background: yellow;}
+				59%{background: yellow;}
+				60%{background: gray;}
+			}
+			@keyframes go{
+				29%{background: gray;}
+				30%{background:	green;}
+				49%{background:	green;}
+				50%{background: gray;}
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align:center; margin-top:50px;">Traffic light animation.<br>*Only HTML and CSS*</h1>
+		<div class="container">
+			<div class="stop"></div>
+			<div class="wait"></div>
+			<div class="go"></div>
+		</div>
+	</body>
 </html>
